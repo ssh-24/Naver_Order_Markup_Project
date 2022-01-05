@@ -1,0 +1,31 @@
+@charset "UTF-8";
+body {
+  color: white;
+  background-color: #004369;
+}
+
+.div_box {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 70px;
+  border: 2px dotted #fff;
+  top: 30px;
+  left: 50px;
+  width: 600px;
+  height: 300px;
+  background-color: #0d0053;
+}
+
+.div_box ul {
+  background-color: #29004b;
+}
+
+.div_box ul li.li_none {
+  margin-top: 10px;
+  list-style: none;
+}
+
+.div_box ul li.li_none::before, .div_box ul li.li_none::after {
+  content: "★";
+}
+/*# sourceMappingURL=test.css.map */
