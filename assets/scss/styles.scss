@@ -1,0 +1,12 @@
+//위에 폴더들에 정의해둔 (_파일)들을 싹 import 하여
+//최종적으로 작성하는 scss파일
+
+@import "./abstracts/variables_color";
+@import "./abstracts/variables";
+
+@import "./base/reset";
+@import "./base/preset";
+
+//지금 이 순서를 꼭 지켜줘야함
+//variable 먼저, 다음에 reset, preset
+//@import 해준 순서대로 최종 컴파일이 됨**

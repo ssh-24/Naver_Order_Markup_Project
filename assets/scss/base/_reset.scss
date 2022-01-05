@@ -1,0 +1,138 @@
+//기본적으로 브라우저마다 제공하는 스타일이 다름
+//그래서 reset.css 혹은 normalize.css로 불리는 설정을 만들어
+//싹 초기화 해줄 필요가 있음
+//해당 키워드로 검색하면 수많은 보일러 플레이트 코드가 나옴
+//무작정 복붙해서 사용하기보단 #나에게 맞춰서 수정,사용하는 것이 중요#
+
+body {
+    min-width: 320px;
+    line-height: normal;
+    font-size: 14px;
+    color: $booking-color-text1;
+    scroll-behavior: smooth; //스크롤할때 부드럽게
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; //파이어폭스 브라우저에서 사용되는 부분
+}
+
+body,
+input,
+textarea,
+select,
+table,
+button,
+code {
+    font-family: $font-default;
+    font-size: 16px;
+}
+
+//전체선택자는 여기서만 선언해주었음
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); //클릭할때 번쩍거리는 효과 제거
+}
+
+.hidden,
+[hidden] {
+    display: none !important;
+}
+
+ul,
+ol,
+li {
+    list-style: none; //li에 숫자나 점이 생기는 것 제거
+}
+
+a {
+    color: inherit; //부모 요소의 색상 상속받게 설정
+    cursor: pointer;
+    text-decoration: none; //링크에 나오는 밑줄을 제거
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+//버튼에도 원래 기본 스타일링이 아주 많음
+//위에서 margin, padding을 0으로 설정해서 밑에서는 기술하지 않음
+button {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer; //마우스 올리면 손가락 표시
+    &:disabled {
+        cursor: not-allowed; //마우스 올리면 금지 표시
+    }
+}
+
+//폼 요소들
+select,
+input,
+textarea,
+button {
+    -webkit-appearance: none; //기본 제공 스타일을 제거
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input:disabled {
+    background-color: rgba(255, 255, 255, 0);
+    cursor: not-allowed;
+}
+
+select {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    &::-ms-expand {
+        display: none;
+    }
+}
+
+input,
+textarea {
+    font-size: inherit;
+    border: 0;
+    &::placeholder {
+        /* Chrome, Safari, Firefox */
+        color: #444;
+        opacity: 1;
+    }
+    &:-ms-input-placeholder {
+        /* IE, Edge */
+        color: #444;
+        opacity: 1;
+    }
+    &[readonly],
+    &:disabled {
+        &::placeholder {
+            /* Chrome, Safari, Firefox */
+            color: rgba(#000, 0.2);
+            opacity: 1;
+        }
+        &:-ms-input-placeholder {
+            /* IE, Edge */
+            color: rgba(#000, 0.2);
+            opacity: 1;
+        }
+    }
+    &::-ms-clear,
+    &::-ms-reveal {
+        /* IE, Edge */
+        display: none; //브라우저 자체에서 제공하는 X버튼 제거
+    }
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
+}
