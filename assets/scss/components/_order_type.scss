@@ -1,0 +1,72 @@
+.dimmed-layer {
+    // 팝업 올라올 때 첫화면 어둡게 표시하는 기능
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(black,0.8); 
+    z-index: 9999; //언제 사용될지 모르기 때문에 높여두는편
+}
+
+.order-type-popup {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 16px 16px 0 0; //좌상단 부터 시계방향
+    background-color: #fff;
+    text-align: center;
+    padding: 32px 0 40px; // 위 좌우 아래 패딩
+    z-index: 10000; //위 값보다 한단계 더 위에 올려줌
+
+    .title {
+        font-size: 20px;
+        font-weight: 700; //굵게
+        color: $booking-color-text1;
+    }
+
+    .type-list {
+        display: flex; //옆으로 배치하기 위해
+        margin-top: 32px; //모든 요소를 4, 8의 배수로 하는 편이 좋다.       
+    }
+
+    .type-item {
+        // 부모 요소에서 flex를 줬을 때 flex:1 이면 각 요소들을 일대일로 균등분할
+        flex: 1;
+
+        //옆에도 type-item인 것에 대한 스타일
+        &+.type-item{
+            border-left: 1px solid $booking-color-border103;
+        }
+
+        .icon {
+            width: 100px;
+            height: auto;
+            color: $booking-color-bg118;
+        }
+
+        .desc {
+            margin-top: 8px;
+            font-size: 15px;
+            line-height: 1.5;
+            font-weight: 600;
+            color: $booking-color-text1; //검정
+        }
+
+
+        .btn-selection {
+            display: inline-block;
+            margin-top: 10px;
+            // inline-block 설정을 안하면 margin이 적용 안됨
+            // ==> 인라인 요소이기 때문
+            padding: 6px 18px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 28px;
+            background-color: $booking-color-text1;
+            color: #fff;
+        }
+
+    }
+}
