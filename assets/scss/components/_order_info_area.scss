@@ -5,7 +5,6 @@
 
     .info-main-title {
         line-height: 39px; // 높이 값 잡아주기
-
         //
         display: flex;
         justify-content: space-between; // **양쪽으로 요소들 보내고, 중앙정렬**
@@ -20,19 +19,86 @@
         font-weight: 700;
         letter-spacing: -0.3px;
         color: $booking-color-text6;
-        
         .ico-n-logo {
             margin-right: 6px;
             width: 24px;
             height: 24px;
         }
     }
-
-      // 추가적으로 상호 아이콘 같은 것 넣을 수 있음
+    // 추가적으로 상호 아이콘 같은 것 넣을 수 있음
     .ico-food-logo {
         margin-right: 6px;
         width: 24px;
         height: 24px;
     }
+}
 
+.tab-switch-box {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+    .tab-switch {
+        flex: 1;
+        background-color: $booking-color-bg158;
+        line-height: 40px;
+        font-size: 13px;
+        font-weight: 700;
+        color: #666;
+        letter-spacing: -0.3px; // 한글이 약간 어벙해 보이는 것 제거
+        text-align: center;
+
+        &.is-active{
+            position: relative;
+            flex-grow: 1.2; // 이 항목만 약간 커지게
+            border: 1px solid $booking-color-border145;
+            background-color: $booking-color-bg157;
+            font-size: 15px;
+            color: $booking-color-text126;
+            box-shadow: 0 2px 3px 0 rgba(0,0,0,0.05);
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -9px;
+                left: 50%;
+                width: 10px;
+                height: 10px;
+                border: 1px solid; // 색 지정안하면 current 색을 상속받음
+                border-width: 0 1px 1px 0; // 위오아왼 중 오른쪽, 아래쪽만 선 있게
+                background-color: $booking-color-bg157;
+                transform: rotate(45deg) translateX(-50%); // 화살표 모양 만들게 회전
+                // translateX : X축으로 자신의 ~만큼 이동해라
+            }
+
+            .ico-check {
+                display: inline-block;
+                margin-left: 4px;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    .ico-check {
+        //기본 선언에서는 감춰둠
+        display: none;
+    }
+}
+
+//밑에 설명 부분
+.info-main-notice {
+    display: flex;
+    align-items: center; //항상 둘은 세트**
+    margin-top: 16px;
+    padding: 12px 16px;
+    border-radius: 2px;
+    background-color: #fff;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    color: #333;
+    &.alert {
+        color: $point-color;
+        font-weight: 700;
+    }
+    .ico-clock {
+        margin-right: 6px;
+    }
 }
