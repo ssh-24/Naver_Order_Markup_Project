@@ -195,6 +195,19 @@ textarea::-webkit-outer-spin-button {
   text-indent: -9999px;
 }
 
+.scroll-x {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scroll-x::-webkit-scrollbar {
+  display: none;
+}
+
 .header-area {
   position: fixed;
   top: 0;
@@ -227,6 +240,16 @@ textarea::-webkit-outer-spin-button {
           align-items: center;
   font-size: 20px;
   font-weight: 600;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.header-area .place-header .title::-webkit-scrollbar {
+  display: none;
 }
 
 .header-area .place-header .link-back {
@@ -239,6 +262,16 @@ textarea::-webkit-outer-spin-button {
   padding-right: 18px;
   font-style: 15px;
   font-weight: 700;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.header-area .place-header .my-orders::-webkit-scrollbar {
+  display: none;
 }
 
 .header-area .place-tab {
@@ -291,7 +324,7 @@ textarea::-webkit-outer-spin-button {
 .header-area .tab-inner .tab .txt {
   position: relative;
   display: inline-block;
-  padding: 0 1px;
+  padding: 0 4px;
   line-height: 46px;
 }
 

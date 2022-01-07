@@ -12,15 +12,14 @@
         display: flex;
         justify-content: space-between; // **양쪽으로 요소들 보내고, 중앙정렬**
         align-items: center; // flex와 매번 세트로 쓰임, 항목들 같은 라인에 정렬
-        
         height: $place-header-height;
         
-
         .title {
             display: flex;
             align-items: center;
             font-size: 20px;
             font-weight: 600; // 약간 bold
+            @include scroll-x; // 가로 스크롤 적용하는 mixin 을 include
         }
 
         .link-back {
@@ -32,6 +31,7 @@
             padding-right: $m-padding;
             font-style: 15px;
             font-weight: 700;
+            @include scroll-x; // 가로 스크롤 적용하는 mixin 을 include
         }
         // end of place-header
     }
@@ -54,7 +54,8 @@
 
         .tab {
             flex: 1; // 모든 요소들이 같은 폭, 간격 균일하게 유지
-            padding: 0 12px; //최소 공간 잡아주는 것, 항목 추가시 무한정 줄어드는 것 방지
+            // 최소 공간 잡아주는 것, 항목 추가시 무한정 줄어드는 것 방지
+            padding: 0 12px; // 12px 했더니 터져버려서 줄임**
             font-size: 16px;
             text-align: center;
             opacity: 0.7; // 선택되지 않은 tab은 약간의 불투명도(dimmed) 처리
@@ -77,7 +78,7 @@
             .txt {
                 position: relative;
                 display: inline-block;
-                padding: 0 1px; // 4px시 칸 넘침, 기기에 맞게 조절하는 게 중요할 듯..!
+                padding: 0 4px;
                 line-height: $place-tab-height; // place-tab 만큼 높이를 설정
             }
         }
