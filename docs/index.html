@@ -8,13 +8,50 @@
     <title>네이버 주문</title>
 </head>
 <body>
-    <h1>테스트입니다</h1>
+    <!-- 큰 영역 안은 container로 잡고 시작 -->
+    <div class="container">
+        <!-- 고정헤더 영역 -->
+        <header class="header-area">
 
-    <!-- 팝업 생성 시 반투명하게 어두워지는 배경 -->
-    <div class="dimmed-layer"></div>
+             <!-- 대체적인 디자인 구조 예측해서 html 우선적으로 작성 -->
+            <div class="place-header">
+                <a href="#" class="link-back">
+                    <img src="../assets/images/ico-back.svg" alt="뒤로가기">
+                </a>
+                <h1 class="title">샐러드 대박점</h1>
+                <a href="#" class="my-orders">주문내역</a>
+            </div>
 
-    <!-- 팝업 부분 -->
-    <div class="order-type-popup">
+            <div class="place-tab">
+                <div class="tab-inner">
+                    <!-- alt + shift + 아래방향키 하면 현재줄 밑으로 바로 복붙 -->
+                    <a href="#" class="tab is-active"><span class="txt">홈</span></a>
+                    <a href="#" class="tab is-active"><span class="txt">메뉴</span></a>
+                    <a href="#" class="tab"><span class="txt">리뷰</span></a>
+                    <a href="#" class="tab"><span class="txt">사진</span></a>
+                    <a href="#" class="tab"><span class="txt">지도</span></a>
+                    <a href="#" class="tab"><span class="txt">주변</span></a>
+                </div>
+            </div>
+
+
+        </header>
+        <!-- // 고정헤더 영역 -->
+    </div>
+
+
+
+    <!--
+         잠시 숨겨두기 위해 hidden 클래스 추가함
+        _reset.scss에 정의되어 있음
+        특정 동작 시 나타나도록 설정 필요
+    -->
+    <div class="dimmed-layer hidden">
+        <!-- 팝업 생성 시 반투명하게 어두워지는 배경 -->
+    </div>
+  
+    <div class="order-type-popup hidden">
+        <!-- 팝업 부분 -->
         <p class="title">어디서 드시나요?</p>
         <div class="type-list">
             <!-- 포장인지 배달인지 선택할 부분 -->
@@ -53,8 +90,9 @@
                 <span class="btn-selection">선택</span>
             </a>
         </div>
+        <!-- // 팝업 부분 -->
     </div>
 
-    <!-- html 구조 끝 -->
+
 </body>
 </html>

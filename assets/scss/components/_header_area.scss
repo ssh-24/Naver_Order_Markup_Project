@@ -1,0 +1,87 @@
+.header-area {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #03c75a;
+    color: #fff;
+    z-index: 5000;
+
+    .place-header {
+        // flex로 설정하면 형태잡기 굉장히 편해짐
+        display: flex;
+        justify-content: space-between; // **양쪽으로 요소들 보내고, 중앙정렬**
+        align-items: center; // flex와 매번 세트로 쓰임, 항목들 같은 라인에 정렬
+        
+        height: $place-header-height;
+        
+
+        .title {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            font-weight: 600; // 약간 bold
+        }
+
+        .link-back {
+            display: flex; // 약간 어색했던 아이콘이 크기가 알맞게 조정
+        }
+
+        .my-orders {
+            // 주문내역의 우측 padding만 설정
+            padding-right: $m-padding;
+            font-style: 15px;
+            font-weight: 700;
+        }
+        // end of place-header
+    }
+
+
+    .place-tab {
+        display: flex;
+        height: $place-tab-height;
+        background-color: #03b753; // header보다 약간 진하게
+    }
+
+    .tab-inner {
+        // 밑 세줄 거의 세트로 사용
+        // space-between , space-around , space-evenly 와 차이점 구분
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 8px; // padding 상하 0 좌우 8px
+        width: 100%; // 없으면 항목들이 최소 간격으로 줄어듬
+
+        .tab {
+            flex: 1; // 모든 요소들이 같은 폭, 간격 균일하게 유지
+            padding: 0 12px; //최소 공간 잡아주는 것, 항목 추가시 무한정 줄어드는 것 방지
+            font-size: 16px;
+            text-align: center;
+            opacity: 0.7; // 선택되지 않은 tab은 약간의 불투명도(dimmed) 처리
+
+            // tab과 is-active 클래스를 모두 가지는 항목에 대한 강조 스타일
+            &.is-active {
+                font-weight: 700;
+                opacity: 1;
+                .txt::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    height: 2px;
+                    background-color: #fff;
+                }
+            }
+
+            .txt {
+                position: relative;
+                display: inline-block;
+                padding: 0 1px; // 4px시 칸 넘침, 기기에 맞게 조절하는 게 중요할 듯..!
+                line-height: $place-tab-height; // place-tab 만큼 높이를 설정
+            }
+        }
+        // end of tab-inner
+    }
+    // end of header-area
+}
