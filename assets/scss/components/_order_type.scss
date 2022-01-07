@@ -1,10 +1,11 @@
 .dimmed-layer {
     // 팝업 올라올 때 첫화면 어둡게 표시하는 기능
-    position: fixed;
+    position: fixed; // 위치 고정
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    //다 0으로 두면 여백없이 꽉 채우는 것
     background-color: rgba(black,0.8); 
     z-index: 9999; //언제 사용될지 모르기 때문에 높여두는편
 }
@@ -14,7 +15,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    border-radius: 16px 16px 0 0; //좌상단 부터 시계방향
+    border-radius: 16px 16px 0 0; //좌상단 부터 시계방향으로, 꼭짓점 완만
     background-color: #fff;
     text-align: center;
     padding: 32px 0 40px; // 위 좌우 아래 패딩
@@ -43,7 +44,7 @@
         .icon {
             width: 100px;
             height: auto;
-            color: $booking-color-bg118;
+            color: $booking-color-bg118; //초록
         }
 
         .desc {
@@ -59,7 +60,7 @@
             display: inline-block;
             margin-top: 10px;
             // inline-block 설정을 안하면 margin이 적용 안됨
-            // ==> 인라인 요소이기 때문
+            // ==> span이 인라인 요소이기 때문
             padding: 6px 18px;
             font-size: 16px;
             font-weight: 700;
