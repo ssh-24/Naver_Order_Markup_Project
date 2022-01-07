@@ -1,0 +1,14 @@
+// 주문 페이지에서 공통적으로 적용할 스타일들을 기술
+
+.container {
+    // padding-top: 100px;
+    padding-top: $place-header-height + $place-tab-height; // 유지보수성 up 
+}
+
+.common-inner {
+    margin: 0 auto;
+    // 본문 영역에서 활용할 부분
+    // 지정값까지만 늘어나고 초과 시 가운데 정렬
+    max-width: 720px;
+}
+

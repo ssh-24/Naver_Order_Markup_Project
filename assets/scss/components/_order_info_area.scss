@@ -1,0 +1,38 @@
+.order-info-area {
+    padding: 10px $m-padding 20px; // 미리 지정해돈 모바일 좌우 padding
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    background-color: $booking-color-bg155;
+
+    .info-main-title {
+        line-height: 39px; // 높이 값 잡아주기
+
+        //
+        display: flex;
+        justify-content: space-between; // **양쪽으로 요소들 보내고, 중앙정렬**
+        align-items: center;
+        //
+    }
+
+    .title {
+        display: flex; // 같은 라인에 두기
+        align-items: center; // display: flex 와 세트
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: -0.3px;
+        color: $booking-color-text6;
+        
+        .ico-n-logo {
+            margin-right: 6px;
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+      // 추가적으로 상호 아이콘 같은 것 넣을 수 있음
+    .ico-food-logo {
+        margin-right: 6px;
+        width: 24px;
+        height: 24px;
+    }
+
+}

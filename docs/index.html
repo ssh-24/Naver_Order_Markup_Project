@@ -18,11 +18,13 @@
              <!-- 가로 스크롤이 가능하게 scroll-x 클래스를 추가 -->
              <!-- 클래스 말고 mixin으로 사용하는 방법도 있음 -->
             <div class="place-header" role="banner">
-                <a href="#" class="link-back">
-                    <img src="../assets/images/ico-back.svg" alt="뒤로가기">
-                </a>
                 <!-- 여기서는 mixin 방식으로 가로 스크롤 적용 -->
-                <h1 class="title">샐러드 대박점</h1>
+                <h1 class="title">
+                    <a href="#" class="link-back">
+                        <img src="../assets/images/ico-back.svg" alt="뒤로가기">
+                    </a>
+                    Hwan's Meal 대구지산점
+                </h1>
                 <!-- 여기서는 mixin 방식으로 가로 스크롤 적용 -->
                 <a href="#" class="my-orders">주문내역</a>
             </div>
@@ -42,9 +44,57 @@
             </div>
         </header>
         <!-- // 고정헤더 영역 -->
-    </div>
-
     
+
+        <!-- 주문정보 영역 -->
+        <div class="order-info-area">
+            <div class="common-inner">
+                <!-- 여기서 그냥 작성하면 보이지 않음, 위에 header가 fixed 되어 있기 때문 -->
+                <!-- 그것을 쉽게 확인하기 위해 _variables.scss에 변수로 지정해둔 것! -->
+                <div class="info-main">
+                    <div class="info-main-title">
+                        <div class="title">
+                            <svg viewBox="0 0 18 18" class="ico-n-logo">
+                                <path fill-rule="evenodd" fill="currentColor"
+                                d="M18 0v18H0V0h18zM7.255 4.582H4.473v9.054h2.915V8.79l3.357 4.846h2.782V4.582h-2.915v4.846L7.255 4.582z">
+                                </path>
+                            </svg>
+                            주문
+                        </div>
+                        <!-- 로고 아이콘 -->
+                        <img class="ico-food-logo" src="../assets/images/hwan-meal-logo.jpg" alt="로고 이미지">
+                    </div>
+
+
+                     <!-- 주문분류 -->
+                    <div class="tab-swithch-box" role="tablist">
+                        <a href="#" class="tab-switch is-active" role="tab">🛍&nbsp;&nbsp;포장</a>
+                        <a href="#" class="tab-switch" role="tab">🍽&nbsp;&nbsp;매장</a>
+                        <a href="#" class="tab-switch" role="tab">🛵&nbsp;&nbsp;배달</a>
+                    </div>
+
+                    <div class="info-main-notice">
+                        가지고 가실 수 있게 포장해 드립니다.
+                    </div>
+
+                    <div class="info-main-notice alert">
+                        지금은 주문을 받을 수 없습니다.
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+        <!-- //주문정보 영역 -->
+
+
+
+        <!-- end of div.container -->
+    </div> 
+
+
+
+
 
 
     <!--
