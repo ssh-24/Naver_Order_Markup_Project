@@ -1,0 +1,72 @@
+.menu-category-area {
+    // 모바일에서 매우 많이 쓰는 속성, sticky, 내려가다 걸려서 위로 올라가게, fixed 된 다른 요소 주의**
+    position: sticky;
+    top: $header-height;
+    margin-top: 10px;
+    background-color: #fff;
+
+    .common-inner {
+        position: relative;
+
+        // 여기만 아래 쪽에 구분선
+        border-bottom: 1px solid $booking-color-border144;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: $m-padding; // 18px
+            height: 100%;
+             // 2 -> 3 으로 오른쪽으로 gradient 적용
+            background-image: linear-gradient(to right, #fff, rgba(255,255,255,0));
+            pointer-events: none; // 포인터 이벤트나 간섭이 생기는 것 방지
+            z-index: 1;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: $m-padding;
+            height: 100%;
+            background-image: linear-gradient(to left, #fff, rgba(255,255,255,0));
+            pointer-events: none;
+            z-index: 1;
+        }
+    }
+
+    .category-list {
+        display: flex;
+        align-items: center;
+        height: 54px;
+    }
+
+    .category-item {
+        // 첫 요소, 끝 요소 패딩 값 넣기
+        &:first-child {
+            padding-left: $m-padding;
+        }
+        &:last-child {
+            padding-right: $m-padding;
+        }
+
+    }
+
+    .category-tab {
+        display: flex;
+        align-items: center;
+        padding: 0 12px;
+        font-size: 16px;
+        // radius 팁, 높이 값의 반만큼
+        border-radius: 15px;
+        height: 30px;
+        color: $booking-color-text6;
+        &.is-active {
+            background-color: $booking-color-bg165;
+            font-weight: 700;
+            color: #fff;
+        }
+    }
+}

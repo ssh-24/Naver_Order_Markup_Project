@@ -2,7 +2,8 @@
 
 .container {
     // padding-top: 100px;
-    padding-top: $place-header-height + $place-tab-height; // 유지보수성 up 
+    padding-top: $place-header-height + $place-tab-height; // 유지보수성 up
+    background-color: $booking-color-border151; // 배경색 옅은 회색
 }
 
 .common-inner {
