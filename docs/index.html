@@ -62,23 +62,41 @@
                             주문
                         </div>
                         <!-- 로고 아이콘 -->
-                        <img class="ico-food-logo" src="../assets/images/hwan-meal-logo.jpg" alt="로고 이미지">
+                        <img class="ico-food-logo" src="/assets/images/ico-hwans-meal.jpg" alt="로고">
                     </div>
 
 
                      <!-- 주문분류 -->
                     <div class="tab-switch-box" role="tablist">
+                        <!-- 선택 시 is-active 클래스 추가 -->
                         <a href="#" class="tab-switch is-active" role="tab">🛍&nbsp;&nbsp;포장<img src="../assets/images/ico-check.svg" alt="" class="ico-check" aria-hidden="true"></a>
                         <a href="#" class="tab-switch" role="tab">🍽&nbsp;&nbsp;매장<img src="../assets/images/ico-check.svg" alt="" class="ico-check" aria-hidden="true"></a>
                         <a href="#" class="tab-switch" role="tab">🛵&nbsp;&nbsp;배달<img src="../assets/images/ico-check.svg" alt="" class="ico-check" aria-hidden="true"></a>
                     </div>
 
+                    <!-- 포장 선택 시 -->
                     <div class="info-main-notice">
                         가지고 가실 수 있게 포장해 드립니다.
                     </div>
 
-                    <!-- 일단 두개 다 보이는 것은 아니기 때문에 hidden 클래스 추가 -->
+                     <!-- 매장 선택 시 -->
+                     <!-- alert 는 강조 -->
+                     <div class="info-main-notice alert hidden">
+                        <svg aria-hidden="true" class="ico-clock" viewBox="0 0 13 13" width="13" height="13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="currentColor" d="M6.5 0a6.5 6.5 0 110 13 6.5 6.5 0 010-13zm0 1a5.5 5.5 0 100 11 5.5 5.5 0 000-11zm.492 1.137v4.157l2.792 2.674-.692.722-3.1-2.97V2.137h1z"></path>
+                        </svg>
+                        지금은 매장 내에서 식사를 하실 수 없습니다.
+                    </div>
+
+                     <!-- 배달 선택 시 -->
+                     <div class="info-main-notice hidden">
+                        주문한 메뉴를 배달해 드립니다.
+                    </div>
+
+                    <!-- 주문 불가 시 -->
+                    <!-- 주문 가능일 때 hidden 클래스 추가 -->
                     <div class="info-main-notice alert hidden">
+                        <!-- 시계 이미지 -->
                         <svg aria-hidden="true" class="ico-clock" viewBox="0 0 13 13" width="13" height="13" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill="currentColor" d="M6.5 0a6.5 6.5 0 110 13 6.5 6.5 0 010-13zm0 1a5.5 5.5 0 100 11 5.5 5.5 0 000-11zm.492 1.137v4.157l2.792 2.674-.692.722-3.1-2.97V2.137h1z"></path>
                         </svg>
@@ -88,28 +106,124 @@
                     <!-- 최근 주문 영역 -->
                     <div class="recent-order-area scroll-x">
                         <div class="recent-title">
-                            <img src="../assets/images/ico-clock.svg" alt="">
+                            <img class="ico-clock" src="../assets/images/ico-clock.svg" alt="">최근<br>주문
                         </div>
                         <div class="recent-menu-area scroll-x">
-                            <ul class="recent-menu-item">
-                                <li class="menu-img">
-                                    <!-- 이미지 파일 사용방법 -->
-                                    <!-- 다음 주소에 들어가서 원하는 이미지 작성 -->
-                                    <img class="menu-img" src="https://via.placeholder.com/80" alt="">
-                                    <span class="badge-cart">
-                                        <img class="ico-cart" src="../assets/images/ico-cart.svg" alt="">
-                                    </span>
-                                    <p class="menu-name">칠리베이컨 웜볼</p>
-                                    <p class="menu-price">6,100원</p>
+                            <ul class="recent-menu-list">
+                                <li class="recent-menu-item is-ordered">
+                                    <!-- 임시 이미지 파일 사용방법 -->
+                                    <!-- https://via.placeholder.com/80 과 같이 작성, 80은 이미지 가로세로폭 -->
+                                    <div class="menu-img-area">
+                                        <!-- 최근 주문 항목에는 뱃지 X -->
+                                        <!-- <span class="badge-popular">인기</span> -->
+                                        <img class="menu-img" src="https://via.placeholder.com/80" alt="메뉴 사진">
+                                        <span class="badge-cart">
+                                            <img class="ico-cart" src="../assets/images/ico-cart.svg" alt="">
+                                        </span>
+                                    </div>
+                                    <p class="menu-name">내가 이걸?</p>
+                                    <p class="menu-price">900,000,000원</p>
+                                </li>
+
+                                <!-- 1 -->
+                                <li class="recent-menu-item">
+                                    <div class="menu-img-area">
+                                        <!-- 뱃지 두 개, absolute 에서 이전 요소 크기 위치 고려** -->
+                                        <span class="badge-typical">대표</span>
+                                        <span class="badge-popular">인기</span>
+                                        <img class="menu-img" src="/assets/images/menu-img/img-pork-kimchi.jpg" alt="메뉴 사진">
+                                        <span class="badge-cart">
+                                            <img class="ico-cart" src="../assets/images/ico-cart.svg" alt="">
+                                        </span>
+                                    </div>
+                                    <p class="menu-name">돼지고기김치볶음</p>
+                                    <p class="menu-price">9,000원</p>
+                                </li>
+
+                                 <!-- 2 -->
+                                 <li class="recent-menu-item">
+                                    <div class="menu-img-area">
+                                        <span class="badge-typical">대표</span>
+                                        <span class="badge-popular">인기</span>
+                                        <img class="menu-img" src="/assets/images/menu-img/img-soyabokki.jpg" alt="메뉴 사진">
+                                        <span class="badge-cart">
+                                            <img class="ico-cart" src="../assets/images/ico-cart.svg" alt="">
+                                        </span>
+                                    </div>
+                                    <p class="menu-name">소세지야채볶음</p>
+                                    <p class="menu-price">8,000원</p>
+                                </li>
+
+                                 <!-- 3 -->
+                                 <li class="recent-menu-item">
+                                    <div class="menu-img-area">
+                                        <span class="badge-popular">인기</span>
+                                        <img class="menu-img" src="/assets/images/menu-img/img-pumpkin-beef.jpg" alt="메뉴 사진">
+                                        <span class="badge-cart">
+                                            <img class="ico-cart" src="../assets/images/ico-cart.svg" alt="">
+                                        </span>
+                                    </div>
+                                    <p class="menu-name">호박쇠고기볶음</p>
+                                    <p class="menu-price">11,000원</p>
+                                </li>
+
+                                 <!-- 4 -->
+                                 <li class="recent-menu-item">
+                                    <div class="menu-img-area">
+                                        <span class="badge-popular">인기</span>
+                                        <img class="menu-img" src="/assets/images/menu-img/img-bag-stew.png" alt="메뉴 사진">
+                                        <span class="badge-cart">
+                                            <img class="ico-cart" src="../assets/images/ico-cart.svg" alt="">
+                                        </span>
+                                    </div>
+                                    <p class="menu-name">부대찌개</p>
+                                    <p class="menu-price">7,000원</p>
+                                </li>
+
+                                 <!-- 5 -->
+                                 <li class="recent-menu-item">
+                                    <div class="menu-img-area">
+                                        <span class="badge-popular">인기</span>
+                                        <img class="menu-img" src="/assets/images/menu-img/img-kimchi-fried-rice.jpg" alt="메뉴 사진">
+                                        <span class="badge-cart">
+                                            <img class="ico-cart" src="../assets/images/ico-cart.svg" alt="">
+                                        </span>
+                                    </div>
+                                    <p class="menu-name">김치볶음밥</p>
+                                    <p class="menu-price">8,000원</p>
+                                </li>
+
+                                <!-- 6 -->
+                                <li class="recent-menu-item">
+                                    <div class="menu-img-area">
+                                        <span class="badge-popular">인기</span>
+                                        <img class="menu-img" src="/assets/images/menu-img/img-beef-seaweed-soup.jpg" alt="메뉴 사진">
+                                        <span class="badge-cart">
+                                            <img class="ico-cart" src="../assets/images/ico-cart.svg" alt="">
+                                        </span>
+                                    </div>
+                                    <p class="menu-name">소고기미역국</p>
+                                    <p class="menu-price">5,000원</p>
+                                </li>
+
+                                <!-- 7 -->
+                                <li class="recent-menu-item">
+                                    <div class="menu-img-area">
+                                        <span class="badge-popular">인기</span>
+                                        <span class="badge-new">신규</span>
+                                        <img class="menu-img" src="/assets/images/menu-img/img-seasoned-green-onion-chicken.jpg" alt="메뉴 사진">
+                                        <span class="badge-cart">
+                                            <img class="ico-cart" src="../assets/images/ico-cart.svg" alt="">
+                                        </span>
+                                    </div>
+                                    <p class="menu-name">양념파닭</p>
+                                    <p class="menu-price">16,000원</p>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <!-- //최근 주문 영역 -->
 
-
-
-                    
                 </div>
             </div>
         </div>

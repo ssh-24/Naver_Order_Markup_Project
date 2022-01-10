@@ -14,3 +14,11 @@
     }
 }
 
+// 텍스트 공간 초과시 ... 으로 말줄임표 표시
+@mixin ellipse {
+    // 항상 세 속성이 세트
+    text-overflow: ellipsis;
+    white-space: nowrap; // 쭉 이어지게
+    overflow: hidden;
+}
+

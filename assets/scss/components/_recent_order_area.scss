@@ -1,0 +1,235 @@
+.recent-order-area {
+    display: flex;
+    margin-top: 16px;
+    padding: 18px 0;
+    border-radius: 2px;
+    background-color: #fff;
+
+    // 왼쪽에 최근 주문 column 단위로 줄바꿈
+    .recent-title {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0; // 원래 너비값 보존
+        justify-content: center; // content들 가운데 정렬
+        align-items: center; // 위와 세트
+        padding: 8px;
+        border-right: 1px solid $booking-color-bg102;
+        line-height: 1.42; // 줄 간격
+        font-size: 12px;
+        font-weight: 700;
+        color: $booking-color-text6;
+        .ico-clock {
+            margin-bottom: 4px;
+            width: 14px;
+        }
+    }
+
+    .recent-menu-list {
+        display: flex;
+
+    }
+
+    .recent-menu-item {
+        box-sizing: content-box;
+        width: 80px;
+        padding-left: 16px;
+        text-align: center;
+
+        // 동격 클래스 일때
+        &.is-ordered {
+            padding-right: 16px;
+            border-right: 1px solid $booking-color-bg102;
+        }
+
+        // 의사 클래스 선택자
+        &:last-child {
+            padding-right: $m-padding;
+        }
+    }
+
+    .menu-img-area {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        border: 1px solid $booking-color-border149;
+        border-radius: 100%; // 굳이 필요?
+        background-color: rgba(0,0,0,0.01);
+
+    }
+
+    // 인기 뱃지
+    .badge-popular {
+        // 부모 요소와 관련
+        position: absolute; 
+        top: 0;
+        left: 0;
+        // 좌상단
+
+        padding: 0 5px;
+        border-radius: 10px;
+        line-height: 16px; // 두 줄이 되지 않는다는 가정 하에 객체의 높이 지정
+        font-size: 11px;
+        font-weight: 700;
+        background-color: #ff61a7;
+        color: #fff;
+        +.badge-typical {
+            // 부모 요소와 관련
+            position: absolute; 
+            top: 0;
+            left: 32px; // 다른 뱃지와 같이있다면, 그만큼 왼쪽 띄워주기
+
+            padding: 0 5px;
+            border-radius: 10px;
+            line-height: 16px; // 두 줄이 되지 않는다는 가정 하에 객체의 높이 지정
+            font-size: 11px;
+            font-weight: 700;
+            background-color: #FFAF3B;
+            color: #fff;
+        }
+        +.badge-new {
+            // 부모 요소와 관련
+            position: absolute; 
+            top: 0;
+            left: 32px; // 다른 뱃지와 같이있다면, 그만큼 왼쪽 띄워주기
+
+            padding: 0 5px;
+            border-radius: 10px;
+            line-height: 16px; // 두 줄이 되지 않는다는 가정 하에 객체의 높이 지정
+            font-size: 11px;
+            font-weight: 700;
+            background-color: #ff6e08;
+            color: #fff;
+        }
+    }
+
+    // 대표 뱃지
+    .badge-typical {
+        // 부모 요소와 관련
+        position: absolute; 
+        top: 0;
+        left: 0;
+        // 좌상단
+        
+        padding: 0 5px;
+        border-radius: 10px;
+        line-height: 16px; // 두 줄이 되지 않는다는 가정 하에 객체의 높이 지정
+        font-size: 11px;
+        font-weight: 700;
+        background-color: #FFAF3B;
+        color: #fff;
+        +.badge-popular {
+            // 부모 요소와 관련
+            position: absolute; 
+            top: 0;
+            left: 32px; // 다른 뱃지와 같이있다면, 그만큼 왼쪽 띄워주기
+
+            padding: 0 5px;
+            border-radius: 10px;
+            line-height: 16px; // 두 줄이 되지 않는다는 가정 하에 객체의 높이 지정
+            font-size: 11px;
+            font-weight: 700;
+            background-color: #ff61a7;
+            color: #fff;
+        }
+        +.badge-new {
+            // 부모 요소와 관련
+            position: absolute; 
+            top: 0;
+            left: 32px; // 다른 뱃지와 같이있다면, 그만큼 왼쪽 띄워주기
+
+            padding: 0 5px;
+            border-radius: 10px;
+            line-height: 16px; // 두 줄이 되지 않는다는 가정 하에 객체의 높이 지정
+            font-size: 11px;
+            font-weight: 700;
+            background-color: #ff6e08;
+            color: #fff;
+        }
+    }
+
+    // 신규 뱃지
+    .badge-new {
+        // 부모 요소와 관련
+        position: absolute; 
+        top: 0;
+        left: 0;
+        // 좌상단
+            
+        padding: 0 5px;
+        border-radius: 10px;
+        line-height: 16px; // 두 줄이 되지 않는다는 가정 하에 객체의 높이 지정
+        font-size: 11px;
+        font-weight: 700;
+        background-color: #ff6e08;
+        color: #fff;
+        +.badge-popular {
+            // 부모 요소와 관련
+            position: absolute; 
+            top: 0;
+            left: 32px; // 다른 뱃지와 같이있다면, 그만큼 왼쪽 띄워주기
+            
+            padding: 0 5px;
+            border-radius: 10px;
+            line-height: 16px; // 두 줄이 되지 않는다는 가정 하에 객체의 높이 지정
+            font-size: 11px;
+            font-weight: 700;
+            background-color: #ff61a7;
+            color: #fff;
+        }
+        +.badge-typical {
+            // 부모 요소와 관련
+            position: absolute; 
+            top: 0;
+            left: 32px; // 다른 뱃지와 같이있다면, 그만큼 왼쪽 띄워주기
+
+            padding: 0 5px;
+            border-radius: 10px;
+            line-height: 16px; // 두 줄이 되지 않는다는 가정 하에 객체의 높이 지정
+            font-size: 11px;
+            font-weight: 700;
+            background-color: #FFAF3B;
+            color: #fff;
+        }
+    }
+
+    .menu-img {
+        // 부모 요소에 크기 맞추기
+        width: 100%;
+        height: 100%;
+        border-radius: 100%; //이미지 둥글게
+    }
+
+    .badge-cart {
+        // 부모 요소와 관련
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        // 우하단
+        display: flex;
+        padding: 6px;
+        border: 1px solid $booking-color-border150;
+        border-radius: 100%; // 원형, but 원본요소의 비율에 종속적
+        background-color: $booking-color-bg18;
+    }
+
+    .ico-cart {
+        width: 16px;
+        height: 16px;
+    }
+
+    .menu-name {
+        margin-top: 8px;
+        font-weight: 600;
+        font-size: 14px;
+        // 글자수 초과시 ... 표시
+        @include ellipse; // 설정해둔 mixin 적용
+    }
+
+    .menu-price {
+        font-size: 13px;
+        font-weight: 600;
+        color: $point-color;
+        // 글자수 초과시 ... 표시
+        @include ellipse;
+    }
+}
