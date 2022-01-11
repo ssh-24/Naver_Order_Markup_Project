@@ -4,6 +4,8 @@
     // padding-top: 100px;
     padding-top: $place-header-height + $place-tab-height; // 유지보수성 up
     background-color: $booking-color-border151; // 배경색 옅은 회색
+
+    padding-bottom: $order-box-area-height; // 하단의 주문하기 버튼 팝업 만큼 padding 설정, 최하단 항목이 가려지지 않도록!
 }
 
 .common-inner {
