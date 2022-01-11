@@ -1,0 +1,78 @@
+.amount-select {
+    display: flex;
+    align-items: center;
+    height: 35px;
+
+    .btn-minus,
+    .btn-plus {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 35px;
+        height: 35px;
+        border: 1px solid $booking-color-border109;
+        background-color: $booking-color-bg3;
+        color: $booking-color-text106;
+
+        // 버튼의 클래스가 enabled일 때 스타일 적용
+        &.enabled {
+            border-color: #00d780;
+            background-color: #00d780;
+            color: #fff;
+        }
+
+        // 버튼의 속성이 disabled일 때 공통 스타일, 클래스 아닌 속성이라서 콜론(:) 사용
+        &:disabled {
+            color: $booking-color-border102;
+        }
+
+        // CSS적으로 공통적인 마이너스 기호 만들어주기
+        &::before {
+            content: '';
+            display: block;
+            width: 13px;
+            height: 1px;
+            background-color: currentColor; // 위에 있는 color 값을 그대로 받아옴
+        }
+    }
+
+    .btn-minus {
+        border-radius: 3px 0 0 3px; // 좌상단부터 시계방향
+
+    }
+    .btn-plus {
+        border-radius: 0 3px 3px 0;
+        // 플러스 기호에만 세로선 추가
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: block;
+            width: 1px;
+            height: 13px;
+            background-color: currentColor;
+            // 왼쪽 위 꼭짓점을 기준으로 이동 값을 재조정해야함
+            transform: translate(-50%,-50%);
+        }
+    }
+
+    .amount {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 35px;
+        border-top: 1px solid $booking-color-border109;
+        border-bottom: 1px solid $booking-color-border109;
+        font-weight: 700;
+        color: $booking-color-text104;
+        // disabled 클래스라면 글자 연하게, 회색 적용
+        &.disabled {
+            font-weight: 400;
+            color: #c9c9c9;
+        }
+    }
+
+}
