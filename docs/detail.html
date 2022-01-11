@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <title>네이버 주문</title>
+</head>
+<body>
+    <div class="container">
+        <!-- 고정헤더 영역 -->
+        <header class="header-area">
+             <!-- role 애트리뷰트는 역할을 지정해주는 것, banner, tablist, tab 등등 -->
+            
+             <!-- 가로 스크롤이 가능하게 scroll-x 클래스를 추가 -->
+             <!-- 클래스 말고 mixin으로 사용하는 방법도 있음 -->
+            <div class="place-header" role="banner">
+                <!-- 여기서는 mixin 방식으로 가로 스크롤 적용 -->
+                <h1 class="title">
+                    <a href="#" class="link-back">
+                        <img src="../assets/images/ico-back.svg" alt="뒤로가기">
+                    </a>
+                    Hwan's Meal 대구지산점
+                </h1>
+                <!-- 여기서는 mixin 방식으로 가로 스크롤 적용 -->
+                <a href="#" class="my-orders">주문내역</a>
+            </div>
+
+
+            <div class="place-tab scroll-x" role="tablist">
+                <div class="tab-inner">
+                    <!-- alt + shift + 아래방향키 하면 현재줄 밑으로 바로 복붙 -->
+                    <a href="#" class="tab" role="tab"><span class="txt">홈</span></a>
+                    <!-- 마크업 단계라서 임의로 is-active 클래스를 지정해주는 방식으로 작성함 -->
+                    <a href="#" class="tab is-active" role="tab"><span class="txt">메뉴</span></a> 
+                    <a href="#" class="tab" role="tab"><span class="txt">리뷰</span></a>
+                    <a href="#" class="tab" role="tab"><span class="txt">사진</span></a>
+                    <a href="#" class="tab" role="tab"><span class="txt">지도</span></a>
+                    <a href="#" class="tab" role="tab"><span class="txt">주변</span></a>
+                </div>
+            </div>
+        </header>
+        <!-- // 고정헤더 영역 -->
+
+
+        디테일~
+    </div>
+    <!-- end of container -->
+</body>
+</html>
