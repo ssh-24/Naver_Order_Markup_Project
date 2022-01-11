@@ -35,4 +35,161 @@
             opacity: 0.15; // 15% 밝기
         }
     }
+
+    // 메뉴정보영역
+    .menu-info-area {
+        margin-top: -40px; // 사진 위로 약간 튀어나오게 스타일링
+        padding: 0 $m-padding 20px;
+
+        .common-inner {
+            position: relative;
+            padding: 18px;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 0 4px 3px rgba(0,0,0,0.04);
+            z-index: 1;
+        }
+
+        .menu-info-group {
+            margin-top: 5px;
+
+            .menu-price {
+                line-height: 24px; // 미세히 안맞는 높이 조정
+                font-size: 19px;
+                font-weight: 700;
+                color: $point-color;
+            }
+
+            .menu-grade::before,
+            .menu-number-of-order::before {
+                content: '';
+                display: inline-block;
+                width: 1px;
+                height: 12px;
+                background-color: $booking-color-bg204;
+                margin: 0 8px;
+                transform: translateY(1px);
+            }
+
+            .menu-grade,
+            .menu-number-of-order {
+                line-height: 24px; // 항목들 미세한 세로정렬
+            }
+        }
+
+        .menu-desc {
+            margin-top: 12px;
+            font-size: 15px;
+            line-height: 22px;
+            color: $booking-color-text6;
+        }
+    }
+
+    // 메뉴주문영역
+    .order-type-area {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid $booking-color-border160;
+
+        .type-select,
+        .type-amount {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .type-select {
+            .title {
+                display: flex;
+                align-items: center;
+                font-size: 15px;
+                font-weight: 700;
+                letter-spacing: -0.3px;
+                color: $booking-color-text6;
+            }
+
+            .ico-n-logo {
+                margin-right: 4px;
+                width: 20px;
+            }
+
+            .tab-switch-box {
+                margin-top: 0;
+                // width: 160px; // 항목이 늘어날 걸 고려해서 각 tab-switch 항목에 width 추가
+                border-radius: 3px;
+                overflow: hidden;
+            }
+
+            .tab-switch {
+                width: 80px;
+                line-height: 37px;
+                font-size: 13px;
+                &.is-active {
+                    flex: 1;
+                    border-radius: 5px;
+                    &::after {
+                        display: none; // 이전에 선택하면 화살표 나왔던 것 안보이게
+                    }
+                }
+                & + .tab-switch {
+                    position: relative; // 까먹지 않도록 주의
+                    
+                    // 항목 구분선
+                    &::before {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        top: 10px;
+                        left: 0;
+                        width: 1px;
+                        height: 17px;
+                        background-color: #e7e7e7;
+                    }
+                }
+            }
+        }
+
+
+        .type-amount {
+            margin-top: 20px;
+            .title {
+                font-size: 14px;
+                font-weight: 700;
+                letter-spacing: -0.3px;
+                color: $booking-color-text6;
+            }
+        }
+
+        .btn-order {
+            display: block;
+            margin-top: 20px;
+            padding: 0 16px; // 버튼에서 글자 딱 붙는 것 띄워주기
+            width: 100%;
+            line-height: 46px;
+            border-radius: 3px;
+            font-weight: 700;
+            background-color: $green; // variables_color에 정의한 custom 색상
+            color: #fff;
+            @include ellipsis;
+            &:disabled {
+                background-color: #c9c9c9;
+                color: $booking-color-text131;
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

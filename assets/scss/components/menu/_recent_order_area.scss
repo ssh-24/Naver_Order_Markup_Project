@@ -224,7 +224,7 @@
         font-weight: 600;
         font-size: 14px;
         // 글자수 초과시 ... 표시
-        @include ellipse; // 설정해둔 mixin 적용
+        @include ellipsis; // 설정해둔 mixin 적용
     }
 
     .menu-price {
@@ -232,6 +232,6 @@
         font-weight: 600;
         color: $point-color;
         // 글자수 초과시 ... 표시
-        @include ellipse;
+        @include ellipsis;
     }
 }
