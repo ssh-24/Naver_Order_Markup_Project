@@ -1,0 +1,167 @@
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 18px;
+    margin: 0 -1*$m-padding; // 실무에서 정말 많이 쓰는 방식
+    
+    // last -child 가 아닌 경우에만 밑줄
+    &:not(:last-child) {
+        border-bottom: 1px solid $booking-color-border144;
+    }
+
+    .menu-detail {
+        display: flex;
+        align-items: center;
+        flex: 1;
+    }
+
+    .menu-img-area {
+        position: relative;
+        flex-shrink: 0; // 화면크기 줄어들 때 찌그러지지 않도록
+        margin-right: 12px;
+        border-radius: 5px;
+        overflow: hidden;
+
+        &:not(.no-img)::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.06);
+        }
+
+        .menu-img {
+            display: block; // 임의 여백을 제거해서 좀더 깔끔하게 디테일 살리기
+        }
+    }
+
+    .menu-desc {
+        margin-top: 4px;
+        letter-spacing: -0.4px;
+        color: $booking-color-text5;
+        @include multi-ellipsis(14px,19px,2);
+    }
+
+    .menu-price {
+        margin-top: 4px;
+        line-height: 1.4;
+        font-size: 15px;
+        font-weight: 700;
+        color: $point-color;
+    }
+
+    .btn-cart {
+        position: relative; // 중요
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 16px;
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        border: 1px solid $booking-color-border150;
+        .ico-cart {
+            width: 20px;
+            height: 20px;
+        }
+        // 담은 수, 카트 아이콘에 빨간 글씨
+        .num {
+            position: absolute;
+            top: 3px;
+            right: 3px;
+            width: 18px;
+            height: 18px;
+            line-height: 18px;
+            border-radius: 50%; // 일대일이라 원형 가능
+            background-color: $point-color;
+            font-size: 12px;
+            font-weight: 700;
+            text-align: center;
+            color: #fff;
+        }
+        // disabled 속성일 때
+        &.disabled {
+            font-size: 12px;
+            border: 0;
+            background-color: #eee;
+            color: #777;
+            cursor: not-allowed; // 커서 안보임
+            pointer-events: none;
+        }
+    }
+
+}
+
+// 다른 화면에서도 쓰여서 밖으로 빼준 것**
+.menu-name-group {
+    display: flex;
+    align-items: center;
+
+    .menu-name {
+        flex-shrink: 0;
+        font-size: 17px;
+        line-height: 22px;
+        font-weight: 700;
+        color: $booking-color-text6;
+    }
+
+    .ico-new {
+        margin-left: 4px;
+    }
+
+    .badge-popular {
+        margin-left: 6px;
+    }
+
+    .badge-typical {
+        margin-left: 6px;
+    }
+
+    .badge-new {
+        margin-left: 6px;
+    }
+}
+
+.menu-info-group {
+    display: flex;
+    flex-shrink: 0; // 화면 줄어들때 무너지는 것 방지하는 역할
+    margin-top: 4px;
+    font-size: 14px;
+    
+    .menu-grade {
+        flex-shrink: 0;
+        font-weight: 700;
+        color: $booking-color-text6;
+
+        .ico-star {
+            margin-right: 2px;
+        }
+
+        // 형제 선택자, 주문수가 있는 경우에만 구분선 적용
+        & + .menu-number-of-order {
+            &::before {
+                content: '';
+                display: inline-block;
+                width: 1px;
+                height: 12px;
+                margin: 0 8px;
+                background-color: $booking-color-bg168;
+                transform: translateY(1px);
+            }
+        }
+    }
+
+    .menu-number-of-order {
+        flex-shrink: 0;
+        color: $booking-color-text5;
+
+        em {
+            margin-left: 4px;
+            font-style: normal;
+            font-weight: 700;
+            color: $booking-color-text6;
+        }
+    }
+}

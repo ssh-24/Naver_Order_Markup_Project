@@ -13,3 +13,42 @@
     max-width: 720px;
 }
 
+// 인기메뉴 뱃지
+.badge-popular {
+    flex-shrink: 0;
+    display: inline-block;
+    padding: 0 5px;
+    border-radius: 10px;
+    font-size: 11px;
+    line-height: 16px;
+    font-weight: 700;
+    background-color: #ff61a7;
+    color: #fff;
+}
+
+// 대표메뉴 뱃지
+.badge-typical {
+    flex-shrink: 0;
+    display: inline-block;
+    padding: 0 5px;
+    border-radius: 10px;
+    font-size: 11px;
+    line-height: 16px;
+    font-weight: 700;
+    background-color: #FFAF3B;
+    color: #fff;
+}
+
+// 신규메뉴 뱃지
+.badge-new {
+    flex-shrink: 0;
+    display: inline-block;
+    padding: 0 5px;
+    border-radius: 10px;
+    font-size: 11px;
+    line-height: 16px;
+    font-weight: 700;
+    background-color: #E95A4C;
+    color: #fff;
+}
+

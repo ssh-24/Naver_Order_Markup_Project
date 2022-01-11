@@ -4,6 +4,8 @@
     top: $header-height;
     margin-top: 10px;
     background-color: #fff;
+    // 다른 하위 요소들이 위로 못올라오게
+    z-index: 5500; // 편안..
 
     .common-inner {
         position: relative;
