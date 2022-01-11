@@ -26,7 +26,6 @@
 
     .recent-menu-list {
         display: flex;
-
     }
 
     .recent-menu-item {
@@ -56,7 +55,7 @@
         width: 80px;
         height: 80px;
         border: 1px solid $booking-color-border149;
-        border-radius: 100%; // 굳이 필요?
+        border-radius: 100%;
         background-color: rgba(0,0,0,0.01);
 
     }
@@ -206,8 +205,6 @@
     .badge-cart {
         // 부모 요소와 관련
         position: absolute;
-        // bottom: 0;
-        // right: 0;
         top: 50px;
         right: 16px;
         display: flex;
