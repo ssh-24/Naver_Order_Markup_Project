@@ -99,7 +99,7 @@
         overflow-y: auto; // 세로축 스크롤
         -webkit-overflow-scrolling: touch; // 모바일 지원
         
-        .option-group {
+        .option-group { // 그룹 두개가 연속으로 나올 때 두번째만 위쪽여백 적용
             background-color: #fff;
             & + .option-group {
                 margin-top: 12px;
@@ -108,7 +108,7 @@
 
         .option-title {
             padding: 18px $m-padding;
-            border-bottom: 1px dashed $booking-color-border2;
+            border-bottom: 1px dashed $booking-color-border2; // dashed : 점선
             font-weight: 800;
             @include common-inner;
 
@@ -125,11 +125,11 @@
                 line-height: 17px;
                 font-size: 13px;
                 color: #fff;
-                &.required {
+                &.required { // 추가적으로 필수요소일때 배경색 변경
                     background-color: $booking-color-bg193;
                 }
             }
-            .desc {
+            .desc { // 설명 부분
                 margin-top: 2px;
                 line-height: 24px;
                 font-size: 15px;
@@ -144,19 +144,23 @@
 
         .option-item {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between; // 기본적으로 양쪽 끝으로 배치
             align-items: center;
-            &:not(:first-child) {
+            &:not(:first-child) { // 첫번째 자식이 아닌 경우, 위쪽 여백
                 margin-top: 14px;
             }
+
+
+
+            // 라디오박스, 체크박스, amount-select 스타일링
 
             .label {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                width: 100%;
+                width: 100%; // 가려진 input이 실제 크기가 0이기 때문에 label이 꽉채워져 당겨짐
                 font-size: 17px;
-                &.checked {
+                &.checked { // label checked 둘 다일 때
                     font-weight: 700;
                     .price {
                         font-weight: 600;
@@ -168,9 +172,10 @@
                 }
                 .label-icon {
                     display: inline-flex;
-                    flex-shrink: 0;
+                    flex-shrink: 0; // 크기 방어
                     width: 28px;
                     height: 28px;
+                    // 공통적 테두리 배경 설정
                     border: 1px solid $booking-color-border101;
                     background-color: #fff;
                 }
@@ -178,43 +183,51 @@
 
             .input-radio,
             .input-check {
-                &:checked + .label {
+                &:checked + .label { // 순서가 중요, label 앞에 checked 있을 때 굵게 적용
                     font-weight: 700;
+                    .price {
+                        font-weight: 600;
+                        color: $point-color;
+                    }
                 }
             }
 
+            // 세부 디테일
+
             .input-radio {
                 & + .label .label-icon {
-                    border-radius: 100%;
+                    border-radius: 100%; // 둥글게
                 }
                 &:checked + .label .label-icon {
-                    border: 8px solid $green;
+                    border: 8px solid $green; // 8px로 초록색 동그랗게 테두리 ( 커스텀 라디오버튼 )
                 }
             }
 
             .input-check {
                 & + .label .label-icon {
-                    border-radius: 3px;
+                    border-radius: 3px; // 끝 살짝만 깎기
                 }
-                &:checked + .label {
-                    .price {
-                        font-weight: 600;
-                        color: $point-color;
-                    }
-                    .label-icon {
+                // 형제선택자(+) 누락안하도록 주의
+                &:checked + .label { // checked 됐을 때 label 안에 있는
+                    .label-icon { // label-icon에 대한 스타일 ( 커스텀 체크박스 )
                         position: relative;
                         border-color: $green;
                         background-color: $green;
+
+                        // CSS 적으로 그리는 체크표시(V)
                         &::before {
                             content: '';
-                            position: absolute;
+                            position: absolute; // 부모요소에 종속적
+
+                            // 임의로 지정한 간격
                             top: 6px;
                             right: 6px;
-                            width: 14px;
+
+                            width: 14px; // 가로 좀 더 길게
                             height: 9px;
                             border: 2px solid #fff;
-                            border-width: 0 0 2px 2px;
-                            transform: rotate(-45deg);
+                            border-width: 0 0 2px 2px; // 2개 면만 필요
+                            transform: rotate(-45deg); // 기울이기
                         }
                     }
                 }
@@ -225,7 +238,8 @@
     .content-bottom {
         padding: 0 10px 10px;
         .btn-order {
-            margin-bottom: 5px;
+            margin-bottom: 5px; // 아래 여백
+
             @include common-inner; // 설정해둔 mixin
             display: block;
             width: 100%;

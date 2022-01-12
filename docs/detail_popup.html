@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="../assets/css/styles.css">
     <title>네이버 주문</title>
 </head>
-<body>
+<!-- 팝업이 떠있을 때는 뒷배경(body)의 스크롤이 움직이지 않도록, scroll-off클래스 -->
+<body class="scroll-off">
     <div class="container">
         <!-- 고정헤더 영역 -->
         <header class="header-area">
@@ -98,9 +99,7 @@
                             </div>
                         </div>
 
-                        <a href="./detail_popup.html">
-                            <button class="btn-order">1개 담기 8,000원</button>
-                        </a>
+                        <button class="btn-order">1개 담기 8,000원</button>
                         <!-- 주문 불가할 경우 버튼 -->
                         <!-- <button class="btn-order" disabled>주문 가능한 시간이 아닙니다.</button> -->
                     </div>
@@ -293,8 +292,7 @@
 
 
         <!-- 옵션팝업 영역 -->
-        <!-- 안보이게 hidden -->
-        <div class="option-popup-area hidden">
+        <div class="option-popup-area">
             <!-- 이전에 설정해둔 dimmed layer, 뒷배경 어둡게 스타일 -->
             <div class="dimmed-layer light"></div>
 
@@ -342,39 +340,43 @@
                 <!-- 옵션 중단 -->
                 <!-- 스크롤 되는 부분 -->
                 <div class="content-body">
+                    <!-- 라디오 박스 -->
                     <div class="option-group">
                         <div class="option-title">
                             <p class="title">
-                                <!-- 필수는 required 클래스 추가 -->
+                                <!-- 필수는 required 클래스 추가, 색상 검 흰 -->
                                 <span class="badge required">필수</span>
                                 <span class="text">밥 선택</span>
                             </p>
                         </div>
                         <ul class="option-list">
                             <li class="option-item">
+                                <!-- 스타일 적용 안할시에 reset.css의 영향으로 라디오박스 보이지 않음 주의! -->
+                                <!-- 편의를 위해 [label]과 [input] 연결 -->
+                                <!-- [name 속성]을 해놓아야 하나만 체크할 수 있는 라디오박스의 특성 가능 -->
                                 <!-- 속성에 checked를 주어 디폴트로 체크 되어있도록 설정가능 -->
-                                <input type="radio" id="rd1" class="input-radio" name="base" checked>
+                                <input type="radio" id="rd1" class="input-radio" name="rice" checked> 
                                 <label for="rd1" class="label">
                                     <span class="label-txt">기본 (흰쌀밥)</span>
                                     <span class="label-icon"></span>
                                 </label>
                             </li>
                             <li class="option-item">
-                                <input type="radio" id="rd2" class="input-radio" name="base">
+                                <input type="radio" id="rd2" class="input-radio" name="rice">
                                 <label for="rd2" class="label">
                                     <span class="label-txt">흑미밥<span class="price"> (+500원)</span></span>
                                     <span class="label-icon"></span>
                                 </label>
                             </li>
                             <li class="option-item">
-                                <input type="radio" id="rd3" class="input-radio" name="base">
+                                <input type="radio" id="rd3" class="input-radio" name="rice">
                                 <label for="rd3" class="label">
                                     <span class="label-txt">현미밥<span class="price"> (+500원)</span></span>
                                     <span class="label-icon"></span>
                                 </label>
                             </li>
                             <li class="option-item">
-                                <input type="radio" id="rd4" class="input-radio" name="base">
+                                <input type="radio" id="rd4" class="input-radio" name="rice">
                                 <label for="rd4" class="label">
                                     <span class="label-txt">오곡밥<span class="price"> (+900원)</span></span>
                                     <span class="label-icon"></span>
@@ -383,6 +385,7 @@
                         </ul>
                     </div>
 
+                    <!-- 체크박스 -->
                     <div class="option-group">
                         <div class="option-title">
                             <p class="title">
@@ -394,7 +397,7 @@
                         <ul class="option-list">
                             <li class="option-item">
                                 <!-- 속성에 checked를 주어 디폴트로 체크 되어있도록 설정가능 -->
-                                <!-- 실제로는 checked가 안돼있어야 맞는 것 -->
+                                <!-- 실제로는 checked가 없어야 맞는 것 -->
                                 <input type="checkbox" id="chk1" class="input-check">
                                 <label for="chk1" class="label">
                                     <span class="label-txt">밥 추가(기본 제공량의 50% 추가) <span class="price">+500원</span></span>
@@ -425,6 +428,7 @@
                         </ul>
                     </div>
 
+                    <!-- 수량체크박스(amount-select) -->
                     <div class="option-group">
                         <div class="option-title">
                             <p class="title">
@@ -506,8 +510,10 @@
                 <!-- 옵션 하단 -->
                 <!-- 버튼 -->
                 <div class="content-bottom">
-                    <button class="btn-order">김치볶음밥(토핑추가) 1개 담기 13,400원</button>
-                    <!-- <button class="btn-order" disabled>지금은 주문할 수 없습니다.</button> -->
+                    <a href="./index.html"> <!-- 다시 메인화면으로 돌아가도록 -->
+                        <button class="btn-order">김치볶음밥(토핑추가) 1개 담기 13,400원</button>
+                        <!-- <button class="btn-order" disabled>지금은 주문할 수 없습니다.</button> -->
+                    </a>
                 </div>
             </div>
         </div>

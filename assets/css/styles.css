@@ -1224,6 +1224,12 @@ body.scroll-off {
   font-weight: 700;
 }
 
+.option-popup-area .content-body .option-item .input-radio:checked + .label .price,
+.option-popup-area .content-body .option-item .input-check:checked + .label .price {
+  font-weight: 600;
+  color: #ff3d3b;
+}
+
 .option-popup-area .content-body .option-item .input-radio + .label .label-icon {
   border-radius: 100%;
 }
@@ -1234,11 +1240,6 @@ body.scroll-off {
 
 .option-popup-area .content-body .option-item .input-check + .label .label-icon {
   border-radius: 3px;
-}
-
-.option-popup-area .content-body .option-item .input-check:checked + .label .price {
-  font-weight: 600;
-  color: #ff3d3b;
 }
 
 .option-popup-area .content-body .option-item .input-check:checked + .label .label-icon {
