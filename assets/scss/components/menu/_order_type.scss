@@ -1,15 +1,3 @@
-.dimmed-layer {
-    // 팝업 올라올 때 첫화면 어둡게 표시하는 기능
-    position: fixed; // 위치 고정
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    //다 0으로 두면 여백없이 꽉 채우는 것
-    background-color: rgba(black,0.8); 
-    z-index: 9999; //언제 사용될지 모르기 때문에 높여두는편
-}
-
 .order-type-popup {
     position: fixed;
     bottom: 0;
