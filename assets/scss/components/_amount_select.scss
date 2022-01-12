@@ -22,7 +22,8 @@
             color: #fff;
         }
 
-        // 버튼의 속성이 disabled일 때 공통 스타일, 클래스 아닌 속성이라서 콜론(:) 사용
+        // 버튼의 속성이 disabled일 때 공통 스타일, 클래스 아닌 속성이라서 콜론(:) 사용, 클래스도 추가 22-01-12
+        &.disabled,
         &:disabled {
             color: $booking-color-border102;
         }

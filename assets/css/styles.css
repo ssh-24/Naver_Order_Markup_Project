@@ -568,7 +568,8 @@ body.scroll-off {
   color: #fff;
 }
 
-.amount-select .btn-minus:disabled,
+.amount-select .btn-minus.disabled, .amount-select .btn-minus:disabled,
+.amount-select .btn-plus.disabled,
 .amount-select .btn-plus:disabled {
   color: #eee;
 }
@@ -2008,7 +2009,227 @@ body.scroll-off {
 }
 
 .order-content .common-inner {
+  position: relative;
   background-color: #fff;
+}
+
+.order-content .common-inner::before, .order-content .common-inner::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: url("/assets/images/bg-pattern.png") repeat-x;
+  background-size: auto 5px;
+}
+
+.order-content .common-inner::before {
+  top: -5px;
+}
+
+.order-content .common-inner::after {
+  bottom: -5px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.order-content .order-content-top {
+  position: relative;
+  padding: 26px 18px 24px;
+}
+
+.order-content .order-content-top::after {
+  content: '';
+  position: absolute;
+  top: 26px;
+  right: 18px;
+  width: 83px;
+  height: 83px;
+  border-radius: 100%;
+  background: url("https://via.placeholder.com/83") no-repeat;
+}
+
+.order-content .order-content-top .title {
+  line-height: 1.2;
+  font-size: 20px;
+  font-weight: 700;
+  color: #01d760;
+}
+
+.order-content .order-content-top .desc {
+  margin-top: 8px;
+  line-height: 1.2;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.order-content .order-content-top .count {
+  margin-top: 8px;
+  line-height: 20px;
+  font-size: 14px;
+  color: #666;
+  letter-spacing: -0.4px;
+}
+
+.order-content .order-content-body {
+  border-top: 1px dashed #e5e5e5;
+}
+
+.order-content .order-content-body .no-order {
+  padding: 70px 0;
+  text-align: center;
+}
+
+.order-content .order-content-body .no-order .txt {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #8f8f8f;
+}
+
+.order-content .order-content-body .menu-info-area {
+  width: 550px;
+}
+
+.order-content .order-content-body .menu-list {
+  padding: 0 18px;
+}
+
+.order-content .order-content-body .menu-item {
+  position: relative;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 22px 18px;
+}
+
+.order-content .order-content-body .menu-item .menu-name-group {
+  padding-right: 40px;
+}
+
+.order-content .order-content-body .menu-item .menu-name {
+  line-height: 23px;
+  font-size: 18px;
+}
+
+.order-content .order-content-body .menu-item .menu-desc {
+  margin-top: 2px;
+}
+
+.order-content .order-content-body .menu-item .btn-option {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 0 6px;
+  line-height: 20px;
+  border-radius: 3px;
+  border: 1px solid #e3e3e3;
+  color: #666;
+}
+
+.order-content .order-content-body .menu-item .amount-and-price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 18px;
+}
+
+.order-content .order-content-body .menu-item .amount-and-price .menu-price {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.order-content .order-content-body .menu-item .btn-delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 22px 18px;
+}
+
+.order-content .order-content-body .menu-item .btn-delete .ico-delete {
+  width: 14px;
+  opacity: 0.3;
+}
+
+.order-content .order-content-body .order-total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 18px;
+  padding: 24px 0;
+  border-top: 2px solid #d5dadd;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.order-content .order-content-body .order-total .total-price {
+  font-size: 19px;
+  color: #ff3d3b;
+}
+
+.order-content .btn-menu-add {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 22px auto 30px;
+  width: 150px;
+  line-height: 48px;
+  border-radius: 24px;
+  border: 1px solid #e5e5e5;
+  color: #242424;
+  -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.04);
+          box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.04);
+}
+
+.order-content .btn-menu-add .ico-add {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 6px;
+  width: 13px;
+  height: 13px;
+}
+
+.order-content .btn-menu-add .ico-add::before {
+  content: '';
+  display: inline-block;
+  width: 13px;
+  height: 1px;
+  background-color: #01d760;
+}
+
+.order-content .btn-menu-add .ico-add::after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 1px;
+  height: 13px;
+  background-color: #01d760;
 }
 
 .order-form-area .page-title-area {
@@ -2051,7 +2272,44 @@ body.scroll-off {
   width: 18px;
 }
 
+.order-form-area .btn-order-area {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 720px;
+}
+
+.order-form-area .btn-order-area .btn-order {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px 18px 0;
+  width: calc(100% - 18px*2);
+  height: 50px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: #01d760;
+  color: #fff;
+}
+
+.order-form-area .btn-order-area .btn-order .ico-n-logo {
+  margin-right: 6px;
+}
+
+.order-form-area .go-to-top {
+  padding: 26px 0;
+  background: none;
+}
+
 .container {
+  min-height: 100vh;
   background-color: #f4f7f9;
 }
 

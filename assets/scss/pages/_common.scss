@@ -1,8 +1,8 @@
 // 주문 페이지에서 공통적으로 적용할 스타일들을 기술
 
 .container {
+    min-height: 100vh; // 최소 높이
     background-color: $booking-color-border151; // 배경색 옅은 회색
- 
     &:not(.order){ // order 클래스가 아닐 때만
         padding-top: $place-header-height + $place-tab-height; // 유지보수성 up
         padding-bottom: $order-box-area-height; // 하단의 주문하기 버튼 팝업 만큼 padding 설정, 최하단 항목이 가려지지 않도록!
