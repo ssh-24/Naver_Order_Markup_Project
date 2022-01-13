@@ -29,3 +29,12 @@ body.scroll-off {
     -ms-touch-action: none; // 모바일에서도 지원
     touch-action: none;
 }
+
+// functional css 라고 함, 각 css가 이름에 맞게 딱 하나만 쓰는 것
+.fw700 {
+    font-weight: 700;
+}
+
+.color-point {
+    color: $point-color;
+}

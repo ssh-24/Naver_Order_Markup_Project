@@ -137,17 +137,150 @@
                     </div>
                 </div>
 
-                <a href="#" class="btn-menu-add"><i class="ico-add"></i>메뉴추가</a>
+                <a href="./index.html" class="btn-menu-add"><i class="ico-add"></i>메뉴추가</a>
             </div>
             <!-- // 주문서 메뉴 -->
 
+            <!-- 주문자 정보 -->
+            <div class="order-content-extra">
+                <div class="common-inner">
+                    <div class="orderer-info-area">
+                        <p class="title">주문자 정보</p>
+                        <ul class="info-list">
+                            <li class="info-item">
+                                <p class="info-title">일회용 수저, 포크</p>
+                                <div class="option-group">
+                                    <div class="option-item">
+                                        <input type="radio" id="need" class="input-radio" name="disposables" checked>
+                                        <!-- 클래스로 need 추가 -->
+                                        <label for="need" class="input-radio-button need">필요해요</label>
+                                    </div>
+                                    <div class="option-item">
+                                        <input type="radio" id="no-need" class="input-radio" name="disposables">
+                                        <label for="no-need" class="input-radio-button no-need">필요없어요</label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="info-item">
+                                <p class="info-title">요청사항</p>
+                                <input type="text" placeholder="(선택) 요청사항을 입력해 주세요." class="input-text">
+                            </li>
+                            <li class="info-item">
+                                <!-- span 에 기능을 가지는 클래스명 추가해주기, preset.scss에 정의해둠 -->
+                                <p class="info-title">주문자 연락처 <span class="fw700 color-point" style="margin-left: 5px;">(필수)</span></p>
+                                <!-- 필수라서 required 속성 추가 -->
+                                <input type="text" placeholder="연락처를 입력해 주세요." class="input-text" required>
+                            </li>
+                        </ul>
+                    </div>
 
+                    <div class="place-map-area">
+                        <p class="title">주문 매장 위치</p>
+                        <div class="map-area">
+                            <div class="place-address-box">
+                                <p class="place-name">Hwan's Meal 대구지산점</p>
+                                <p class="place-address">대구 수성구 지산동</p>
+                                <p class="place-address-detail">지산역 1번 출구에서 308m</p>
+                            </div>
+                            <!-- 실제 지도가 아니라 서버단에서 크롭해서 온 이미지파일이 들어가는 부분 -->
+                            <img src="../assets/images/map-img.png" alt="" class="img-map" width="400px" height="170px">
+                        </div>
+                    </div>
 
+                    <div class="agreement-area">
+                        <p class="title">개인정보 수집, 제공</p>
 
+                        <ul class="agreement-list">
+                            <!-- 토글버튼 열어두고 항목 노출은 li에 is-open 추가 -->
+                            <li class="agreement-item is-open">
+                                <div class="agreement-title">
+                                    <span class="txt">개인정보 수집 동의</span>
+                                    <button class="btn-toggle">
+                                        <img src="../assets/images/ico-arrow-gray.svg" alt="">
+                                    </button>
+                                </div>
+                                <div class="agreement-content">
+                                    개인정보 수집에 동의하시겠습니까?<br>
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit possimus
+                                    voluptatibus sit officia natus asperiores molestias placeat magni, corporis eius
+                                    laboriosam facere nemo obcaecati tenetur reiciendis quam in consequuntur
+                                    beatae?<br><br>
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit possimus
+                                    voluptatibus sit officia natus asperiores molestias placeat magni, corporis eius
+                                    laboriosam facere nemo obcaecati tenetur reiciendis quam in consequuntur
+                                    beatae?<br><br>
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit possimus
+                                    voluptatibus sit officia natus asperiores molestias placeat magni, corporis eius
+                                    laboriosam facere nemo obcaecati tenetur reiciendis quam in consequuntur
+                                    beatae?<br><br>
+                                </div>
+                            </li>
+                            <!-- 토글버튼 열어두고 항목 노출은 li에 is-open 추가 -->
+                            <li class="agreement-item">
+                                <div class="agreement-title">
+                                    <span class="txt">개인정보 제공 동의</span>
+                                    <button class="btn-toggle">
+                                        <img src="../assets/images/ico-arrow-gray.svg" alt="">
+                                    </button>
+                                </div>
+                                <div class="agreement-content">
+                                    개인정보 제공에 동의하시겠습니까?<br>
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit possimus
+                                    voluptatibus sit officia natus asperiores molestias placeat magni, corporis eius
+                                    laboriosam facere nemo obcaecati tenetur reiciendis quam in consequuntur
+                                    beatae?
+                                </div>
+                            </li>
+                            <!-- 토글버튼 열어두고 항목 노출은 li에 is-open 추가 -->
+                            <li class="agreement-item is-open">
+                                <!-- color-point로 간단하게 빨간색 적용 가능 -->
+                                <div class="agreement-title color-point">
+                                    <span class="txt">주문취소 및 환불 유의사항</span>
+                                    <button class="btn-toggle">
+                                        <img src="../assets/images/ico-arrow-gray.svg" alt="">
+                                    </button>
+                                </div>
+                                <div class="agreement-content">
+                                    주문완료 시 주문취소 및 환불이 불가한 점 유의바랍니다.<br>
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit possimus
+                                    voluptatibus sit officia natus asperiores molestias placeat magni, corporis eius
+                                    laboriosam facere nemo obcaecati tenetur reiciendis quam in consequuntur
+                                    beatae?
+                                </div>
+                            </li>
+                        </ul>
 
+                        <p class="agreement-info-txt">주문 서비스 이용을 위한 개인정보 수집 및 제3자 제공, 취소/환불 규정을 확인하였으며 이에 동의합니다.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- // 주문자 정보 -->
 
+            <!-- 주문하기 버튼 -->
+            <div class="btn-order-area">
+                <!-- div.common-inner로 따로 안 감싸주고,
+                    해당 클래스 속성에서 mixin을 include 해보겠음 -->
+                <a href="./index.html"> <!-- 주문하기 버튼 누르면 index.html로 이동 -->
+                    <button class="btn-order">
+                        <!-- 로고 아이콘 크기 인라인으로 직접 설정 -->
+                        <svg viewBox="0 0 18 18" width="18" height="18" class="ico-n-logo">
+                            <path fill-rule="evenodd" fill="currentColor"
+                                d="M18 0v18H0V0h18zM7.255 4.582H4.473v9.054h2.915V8.79l3.357 4.846h2.782V4.582h-2.915v4.846L7.255 4.582z">
+                            </path>
+                        </svg> 주문하기
+                    </button>
+                </a>
+            </div>
+            <!-- // 주문하기 버튼 -->
 
+            <!-- 맨위로 -->
+            <div class="go-to-top">
+                <a href="#" class="link">Top<i class="ico-up"></i></a>
+            </div>
+            <!-- // 맨위로 -->
         </div>
+
+
     </div>
 </body>
 </html>

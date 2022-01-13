@@ -105,13 +105,13 @@ textarea {
     border: 0;
     &::placeholder {
         /* Chrome, Safari, Firefox */
-        color: #444;
+        color: #c9c9c9;
         opacity: 1;
     }
     &:-ms-input-placeholder {
         /* IE, Edge */
-        color: #444;
-        opacity: 1;
+        color: #c9c9c9;
+        opacity: 1; // 흐려진 것 두 번 적용되는 것 방어
     }
     &[readonly],
     &:disabled {
