@@ -1,0 +1,74 @@
+.modal-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000; // 모달 팝업이라 최상위로 올려줌
+
+    .modal-container {
+        position: fixed;
+        // 꼭짓점 기준으로 상하좌우 중앙
+        top: 50%;
+        left: 50%;
+        // width: calc(100%-32px); // 모바일 환경에서 너무 좁은게 맘에 안들어서 수정
+        width: 100%;
+        max-width: 324px; // 최대 너비
+        border-radius: 12px;
+        text-align: center;
+        background-color: #fff;
+        // 자기 자신의 영역도 고려
+        transform: translate(-50%,-50%);
+        overflow: hidden; // 넘치는 부분 잘리도록
+        z-index: 10001;
+    }
+
+    .modal-content {
+        position: relative;
+        padding: 24px 30px;
+        color: $booking-color-text6;
+
+        // 닫기 버튼 우상단
+        .btn-close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            padding: 16px;
+        }
+
+        .modal-icon {
+            opacity: 0.7;
+        }
+
+        .modal-title {
+            margin-top: 8px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .modal-desc {
+            margin-top: 8px;
+            color: $booking-color-text1;
+            letter-spacing: -0.3px;
+        }
+    }
+
+    .btn-area {
+        display: flex;
+        button {
+            flex: 1; // 항목 있는 만큼 n분에 1 해서 나눠가짐, 한가지 항목이라면 모든 공간 차지
+            padding: 16px 0;
+            font-size: 18px;
+        }
+        .btn-cancel {
+            background-color: #edf1f4;
+            color: #333;
+        }
+        .btn-confirm {
+            background-image: linear-gradient(to left, #3accff, #2cec88);
+            font-weight: 800;
+            color: #fff;
+        }
+    }
+}
