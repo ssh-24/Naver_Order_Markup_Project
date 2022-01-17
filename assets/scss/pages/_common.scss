@@ -29,6 +29,13 @@
     &.light {
         background-color: rgba(black,0.4); // 약간 밝게 설정
     }
+
+    //220117 추가
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    &.hidden {
+        opacity: 0;
+    }
 }
 
 // 인기메뉴 뱃지

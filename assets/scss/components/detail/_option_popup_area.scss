@@ -3,9 +3,26 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 0; // 220117 default로 안보이게 설정
     overflow: hidden;
-    z-index: 5000;
+    z-index: 1;
+    &.show {
+        height: 110%; // 220117 show가 붙을 때만 보여지게 설정
+        // 100%일때 가려지는 것, 낮아지면 점점 올라온다, 넉넉하게 110 줌
+        z-index: 5000;
+        .dimmed-layer {
+            opacity: 1;
+        }
+        .menu-option-popup {
+            transform: translateY(0); // 원래 위치로 올려줌
+        }
+    }
+
+    // 220117 추가
+    .dimmed-layer {
+        position: absolute;
+        opacity: 0;
+    }
 
     .menu-option-popup {
         position: fixed;
@@ -16,6 +33,10 @@
         max-height: calc(100% - 45px); // 45px을 뺀만큼의 100%
         background-color: $booking-color-border151;
         z-index: 10000; // 최상위로 올려줌
+
+        // 220117 추가
+        transform: translateY(100%);
+        transition: transform 0.3s ease; // 밑에서 천천히 올라오도록
     }
 
     .content-top-pattern {
@@ -24,6 +45,7 @@
         width: 100%;
         height: 11px; // 뾰족한 패턴 부분이 돌출되도록
         fill: white;
+        z-index: 2;
     }
 
     .content-top {
