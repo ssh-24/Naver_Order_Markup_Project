@@ -46,6 +46,13 @@
         letter-spacing: -0.3px;
     }
 
+    // 토글 버튼 스타일 추가 220117
+    .btn-toggle {
+        display: flex; // 미묘한 여백 제거
+        margin: -16px; // 준 padding 값만큼 -margin을 주면 크기 변함없이 지정
+        padding: 16px;
+    }
+
     .period {
         font-size: 14px;
         letter-spacing: -0.3px;

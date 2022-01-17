@@ -20,7 +20,7 @@
             <div class="place-header" role="banner">
                 <!-- 여기서는 mixin 방식으로 가로 스크롤 적용 -->
                 <h1 class="title">
-                    <a href="./index.html" class="link-back">
+                    <a href="#" class="link-back">
                         <img src="../assets/images/ico-back.svg" alt="뒤로가기">
                     </a>
                     Hwan's Meal 대구지산점
@@ -101,7 +101,7 @@
                     </div>
 
                     <!-- 최근 주문 영역 -->
-                    <div class="recent-order-area scroll-x">
+                    <div class="recent-order-area">
                         <div class="recent-title">
                             <img class="ico-clock" src="../assets/images/ico-clock.svg" alt="">최근<br>주문
                         </div>
@@ -916,22 +916,15 @@
     <!-- end of div.container -->
 
 
-    <!--
-         잠시 숨겨두기 위해 hidden 클래스 추가함
-        _reset.scss에 정의되어 있음
-        특정 동작 시 나타나도록 설정 필요
-    -->
-    <div class="dimmed-layer hidden">
-        <!-- 팝업 생성 시 반투명하게 어두워지는 배경 -->
-    </div>
+    <!-- 팝업 부분 -->
+    <!-- 팝업 생성 시 반투명하게 어두워지는 배경 -->
+    <div class="dimmed-layer hidden"></div>
 
     <div class="order-type-popup hidden">
-        <!-- 팝업 부분 -->
         <p class="title">어디서 드시나요?</p>
         <div class="type-list">
             <!-- 포장인지 배달인지 선택할 부분 -->
-            <!-- 차후에 링크는 설정해주어야함 -->
-            <a href="" class="type-item">
+            <a href="#" class="type-item" onClick="popupClose()"> <!-- href에 # 안하면 동작하지 않음 주의 -->
                 <!-- <img src="#" alt="포장" class="icon"> -->
                 <!-- svg 이미지, path마다 fill이 있어 색상 조절 및 다른 조절이 쉽다
                 단 html파일에 직접 작성하였을때만! 바꿀일 없다면 img폴더 안에서 사용해도 됨 -->
@@ -946,7 +939,7 @@
                 <p class="desc">포장해서 가져갈게요</p>
                 <span class="btn-selection">선택</span>
             </a>
-            <a href="" class="type-item">
+            <a href="#" class="type-item" onClick="popupClose()">
                 <!-- <img src="#" alt="매장" class="icon"> -->
                 <svg class="icon" height="637pt" viewBox="-20 -46 637.33396 637" width="637pt"
                     xmlns="http://www.w3.org/2000/svg">
@@ -965,9 +958,35 @@
                 <span class="btn-selection">선택</span>
             </a>
         </div>
-        <!-- // 팝업 부분 -->
     </div>
+    <!-- // 팝업 부분 -->
 
 
+    <!-- body 하단 영역에 스크립트 추가 -->
+    <script>
+        // 윈도우가 로드되자마자 팝업 오픈
+        window.onload = function () {
+            popupOpen();
+        }
+        const popupOpen = () => {
+            // querySelector를 이용하면 class기반으로 DOM을 선택할 수 있음
+            document.querySelector('.dimmed-layer').classList.remove('hidden');
+            document.querySelector('.order-type-popup').classList.remove('hidden');
+        }
+        const popupClose = () => {
+            document.querySelector('.dimmed-layer').classList.add('hidden');
+            document.querySelector('.order-type-popup').classList.add('hidden');
+        }
+
+        // 메뉴 리스트 토글
+        const btnToggle = document.querySelectorAll('.btn-toggle');
+        const toggleMenuList = (e) => {
+            e.currentTarget.closest('.menu-list-area').classList.toggle('is-closed');
+        }
+
+        btnToggle.forEach(function (e) {
+            e.addEventListener('click', toggleMenuList);
+        })
+    </script>
 </body>
 </html>
